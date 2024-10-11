@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <style>
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00FFFF;
+}
+
+header {
+    background-color:#00BFFF ;
+    color: #800000;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #800000;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+}
+
+footer {
+    background-color:#FF00FF;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sport Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><p>
+
+<body>
+    <header>
+        <h1>Мой Спортивный Блог</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pm626pYuXEY?si=DKqmc-5IrvsPbYn1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Главная</a></li>
+                <li><a href="{{ url_for('post1') }}">Футбол 1</a></li>
+                <li><a href="{{ url_for('post2') }}">Баскетбол 2</a></li>
+                 <li><a href="{{ url_for('post3') }}">Предложение по новостям</a></li></p>
+            </ul>
+        </nav>
+        <img src="https://football24.ru/uploads/posts/2022-03/1648042174_euro.jpg" alt="Football">
+<h3>Интересная информация про мяч, которым играли на чемпионате Европы, 2024 года в Германии!</h3>
+
+
+
+
+<h2>Выделение текста при наведении</h2>
+<p id="text">Наведи курсор на этот текст, чтобы выделить его.</p>
+
+<h2>Показ/Скрытие пароля</h2>
+<form>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password">
+    <button type="button" id="togglePassword">Показать</button>
+</form>
+
+<script>
+    // Выделение текста
+    const textElement = document.getElementById('text');
+
+    textElement.addEventListener('mouseover', () => {
+        textElement.classList.add('highlight');
+    });
+
+    textElement.addEventListener('mouseout', () => {
+        textElement.classList.remove('highlight');
+    });
+
+    // Показ/скрытие пароля
+    const passwordInput = document.getElementById('password');
+    const toggleButton = document.getElementById('togglePassword');
+
+    toggleButton.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        toggleButton.textContent = type === 'password' ? 'Показать' : 'Скрыть';
+    });
+
+</script>
+
+
+
+
+ <p>Официальный мяч чемпионата Европы называется Fussballliebe (в переводе с немецкого — «любовь к футболу»). «Умный мяч» Adidas оснащен чипом, который позволяет отслеживать точное положение мяча. Данные от мяча будут соединяться с изображением, полученным со специальных камер,— на выходе будет получаться 3D-модель, созданная с помощью искусственного интеллекта. Инновация поможет судьям быстрее и точнее принимать решения в ситуациях возможной игры рукой и лучше контролировать, когда мяч покидает пределы поля.
+ Развернуть на весь экран.
+    Благодаря этим технологиям на Евро также впервые будет применена система полуавтоматического определения офсайда. Ранее ее использовали на чемпионате мира в Катаре, а также в матчах еврокубков. На каждой арене Евро-2024 установлено по 12 камер, которые способны определять точное положение игроков. А «вживленный» в мяч сенсор сможет точно вычислять момент контакта.
+ </p>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+<p>
+
+</p>
+    <footer><p>
+        Чемпионами Европы по Футболу, стали Испанцы, уже восьмой  раз подряд они становятся чемпионами Европы!
+        Это показывает на сколько, эта страна любит футбол, ну конечно, как же иначе, ведь в Испании почти круглый год
+        светит солнце, 300 дней в году! Этим и доказывают Испанцы свои наваки, по тренеровке, в свей игре на Чемпионате!
+    </p>
+        <p>&copy; 2024 Мой Спортивный Блог</p>
+    </footer>
+</body>
+</html>
