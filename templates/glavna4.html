@@ -1,0 +1,12 @@
+{% extends 'glavna.html' %}
+
+{% block content %}
+<h2>Предложение по новостям</h2>
+<p>В данном окне вы можете оставить ваши пожелания по последущим новостям</p>
+<form action="/post3" method="POST">
+<label>Ваши пожелания </label>
+<textarea name="wishes"></textarea>
+<input type="submit" value="Отправить">
+</form>
+<img src="https://i.servimg.com/u/f62/19/64/81/70/0uk8fr10.jpg" alt="wishes">
+{% endblock %}
